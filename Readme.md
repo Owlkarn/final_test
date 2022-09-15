@@ -1,46 +1,39 @@
-Console.WriteLine("Ddtlb");
-string rty = Console.ReadLine();
-string[] qwe = new string[0];
-int count = 0;
+# ***Решение контрольной задачи***
+## 1. *Создание метода для заполнения массива строк AddStringToArray(string[] array)*
+* Запрашиваем у пользователя ввод нового элемента массива, пока не будет введено "exit";
+* Создаем счетчик элементов массива count и присваиваем ему значение 0;
+* Пока пользователь не ввел "exit" выполняются следующие действия:
+  
+  * Если введенный элемент не пустой, то:
 
-while (rty != "ex")
-{
-    if (rty != "")
-    {
-        count++;
-        string[]ewq = new string[count];
-        for (int i = 0; i < count-1; i++)
-        ewq[i] = qwe[i];
-        ewq[count-1] = rty;
-        qwe = ewq;        
-    }
-    Console.WriteLine("effggf");
-    rty = Console.ReadLine(); 
-}
-void PrintArray(string[] array)
-{
-    Console.Write("Текущий массив: ");
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-}
-PrintArray(qwe);
+    * Увеличиваем счетчик count на 1;
+    * Создаем пустой массив tempArray с длинной = count;
+    * Каждому элементу массива tempArray (кроме последнего) присваиваем значение элемента массива array, имеющему тот же индекс;
+    * Последнему элементу массива tempArray присваиваем введенное пользователем значение;
+    * Копируем массив tempArray в массив array.
 
-Console.WriteLine("max length");
-int size = Convert.ToInt32(Console.ReadLine()); 
-count = 0;
-string[] qwe2 = new string[0];
-for (int i = 0; i < qwe.Length; i++)
-{
-    if (qwe[i].Length <= size)
-    {
-        count++;
-        string[]ewq = new string[count];
-        for (int j = 0; j < count-1; j++)
-        ewq[j] = qwe2[j];
-        ewq[count-1] = qwe[i];
-        qwe2 = ewq;
-    }
-}
-PrintArray(qwe2);
+* Запрашиваем у пользователя введение следующего элемента массива;
+* После ввода "exit" возвращаем значение array.
+
+## *2. Создание метода для вывода массива PrintArray(string[] array)*
+
+* Вывод надписи "Массив: "
+* Для каждого элемента массива выполняется вывод его значения + пробел.
+
+## *3. Поиск элементов заданной или меньшей длинны*
+
+* Заполнение масива строк lines с помощью метода заполнения массива (пункт 1);
+* Запрос у пользователя длинны элемента lgth, меньше или равной которой будет искать программа;
+* Создаем пустой массив filterLines с длинной = 0;
+* Создаем счетчик элементов массива filterLines count и присваиваем ему значение 0;
+* Для каждого элемента массива lines выполняется:
+
+  * Если длинна элемента массива lines меньше или равна значению lgth, то:
+    
+    * Увеличиваем счетчик count на 1;
+    * Создаем пустой массив tempFilterLines с длинной = count;
+    * Каждому элементу массива tempFilterLines (кроме последнего) присваиваем значение элемента массива filterLines, имеющему тот же индекс;
+    * Последнему элементу массива tempFilterLines присваиваем введенное пользователем значение;
+    * Копируем массив tempFilterLines в массив filterLines;
+
+## *4. Вывод массива по заданным параметрам*
