@@ -30,3 +30,24 @@ string[] AddStringToArray(string[] array)
     Console.WriteLine();
     return array;
 }
+string[] lines = new string[0];
+lines = AddStringToArray(lines);
+PrintArray(lines);
+
+Console.Write("Введите длинну элемента массива, равной или меньше которой будет производиться поиск: ");
+int lgth = Convert.ToInt32(Console.ReadLine());
+int count = 0;
+string[] filterLines = new string[0];
+for (int i = 0; i < lines.Length; i++)
+{
+    if (lines[i].Length <= lgth)
+    {
+        count++;
+        string[] tempFilterLines = new string[count];
+        for (int j = 0; j < count - 1; j++)
+            tempFilterLines[j] = filterLines[j];
+        tempFilterLines[count - 1] = lines[i];
+        filterLines = tempFilterLines;
+    }
+}
+PrintArray(filterLines);
